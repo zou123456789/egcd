@@ -122,11 +122,11 @@ jobs:
          rm kernel_platform/common/android/abi_gki_protected_exports_* || echo "No protected exports!"
          rm kernel_platform/msm-kernel/android/abi_gki_protected_exports_* || echo "No protected exports!"
 
-      - name: Merge android15-6.6-2025-05
+      - name: Fetch latest upstream android15-6.6-2025-05
         run: |
          cd kernel_workspace/kernel_platform/common
          git remote add upstream https://android.googlesource.com/kernel/common || true
-         git fetch upstream
+         git fetch --depth=1 upstream android15-6.6-2025-05
          git merge upstream/android15-6.6-2025-05 || true
 
       - name: Set up SukiSU
