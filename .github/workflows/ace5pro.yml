@@ -127,7 +127,7 @@ jobs:
          cd kernel_workspace/kernel_platform/common
          git remote add upstream https://android.googlesource.com/kernel/common || true
          git fetch --depth=1 upstream android15-6.6-2025-05
-         git merge upstream/android15-6.6-2025-05 || true
+         git merge upstream/android15-6.6-2025-05 --allow-unrelated-histories
 
       - name: Set up SukiSU
         run: |
